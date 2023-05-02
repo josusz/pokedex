@@ -1,4 +1,7 @@
 export interface Pokemons {
-  message: string;
-  status: string;
+  id: number;
+  name: string;
+  height: number;
+  weight: number;
+  imageUrl: string;
 }
