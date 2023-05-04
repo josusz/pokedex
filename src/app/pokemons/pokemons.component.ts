@@ -8,19 +8,25 @@ import { Pokemons } from '../pokemons';
   styleUrls: ['./pokemons.component.css']
 })
 export class PokemonsComponent implements OnInit{
-  constructor(private PokemonsService: PokemonsService){}
+  pokemon: Pokemons = {} as Pokemons;
+  
+  constructor(private pokemonService: PokemonsService){}
 
   ngOnInit(): void {
-    this.loadPokemon();
+    this.loadPokemon(1);
   }
 
-  loadPokemon(): void {
-    this.PokemonsService.getPokemons().subscribe(
-      {
-      next: pokemons => this.pokemons = pokemons
-      }
-    );
+  loadPokemon(id: number): void {
+    this.pokemonService.getPokemons(id).subscribe((pokemon) => {
+      this.pokemon = pokemon;
+    });
   }
 
-  pokemons: Pokemons = {} as Pokemons;
+  next(): void {
+    this.loadPokemon(this.pokemon.id + 1);
+  }
+
+  previous(): void {
+    this.loadPokemon(this.pokemon.id - 1);
+  }
 }

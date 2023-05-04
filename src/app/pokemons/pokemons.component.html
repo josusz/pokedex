@@ -4,21 +4,38 @@
   </div>
   <div class="row m-3">
     <div class="col">
-      <img [src]=""
-        width="200px"
-        class="shadow rounded">
+      <img [src]="pokemon.imageUrl" width="200px" alt="{{ pokemon.name }}">
     </div>
   </div>
   <div class="row m-3">
     <div class="col">
       <span>
+        {{ pokemon.id }}
+      </span>
+    </div>
+    <div class="col">
+      <span>
+        {{ pokemon.name }}
       </span>
     </div>
   </div>
   <div class="row m-3">
     <div class="col">
-      <button class="btn btn-primary" (click)="loadPokemon()">
-        Novo Po
+      <span>Altura: {{ pokemon.height }}</span>
+    </div>
+    <div class="col">
+      <span>Peso: {{ pokemon.weight }}</span>
+    </div>
+  </div>
+  <div class="row m-3">
+    <div class="col">
+      <button class="btn btn-primary" (click)="previous()">
+        Anterior
+      </button>
+    </div>
+    <div class="col">
+      <button class="btn btn-primary" (click)="next()">
+        Próximo
       </button>
     </div>
   </div>

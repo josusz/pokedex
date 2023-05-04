@@ -7,12 +7,9 @@ import { Pokemons } from './pokemons';
   providedIn: 'root'
 })
 export class PokemonsService {
-  getPokemon(index: number) {
-    throw new Error('Method not implemented.');
-  }
   constructor(private http: HttpClient) { }
 
-  getPokemons(): Observable<Pokemons>{
-    return this.http.get<Pokemons>("https://pokeapi.co/api/v2/pokemon/{id}");
+  getPokemons(id:number): Observable<Pokemons>{
+    return this.http.get<Pokemons>('https://pokeapi.co/api/v2/pokemon/'+ id);
   }
 }
