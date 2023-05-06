@@ -6,6 +6,7 @@ import { Pokemons } from '../pokemons';
   selector: 'app-pokemons',
   templateUrl: './pokemons.component.html',
   styleUrls: ['./pokemons.component.css']
+
 })
 export class PokemonsComponent implements OnInit{
   pokemon: Pokemons = {} as Pokemons;

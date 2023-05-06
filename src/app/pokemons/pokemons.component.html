@@ -1,33 +1,40 @@
+<nav class="navbar bg-danger" data-bs-theme="dark">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1" style="color: #ffffff;">Pokedéx</span>
+  </div>
+</nav>
 <div class="container text-center">
-  <div class="display-6">
-    Pokedéx
-  </div>
-  <hr>
-  <div class="row m-3">
-    <div class="col">
-      <img [src]="pokemon.imageUrl" width="200px" alt="{{ pokemon.name }}">
-      <br>
-      {{ pokemon.name }} - ID: {{ pokemon.id }}
-    </div>
-  </div>
-  <div class="row m-3">
-    <div class="col">
-      <span>Altura: {{ pokemon.height }}</span>
-    </div>
-    <div class="col">
-      <span>Peso: {{ pokemon.weight }}</span>
-    </div>
-  </div>
-  <div class="row m-3">
-    <div class="col">
-      <button class="btn btn-primary" (click)="previous()">
-        Anterior
-      </button>
-    </div>
-    <div class="col">
-      <button class="btn btn-primary" (click)="next()">
-        Próximo
-      </button>
+  <div class="position-absolute top-50 start-50 translate-middle">
+    <div class="row m-3">
+      <div class="col">
+        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+          <button class="btn btn-danger" (click)="previous()">&#10094; Anterior</button>
+          <button class="btn btn-success" (click)="next()">Próximo &#10095;</button>
+        </div>
+        </div>
+      </div>
+    <h2>{{ pokemon.name | titlecase}}</h2>
+    <div class="row m-3">
+      <div class="col">
+        <img [src]="pokemon.imageUrl" width="200px" alt="{{ pokemon.name }}">
+      </div>
+      <div class="col">
+        <div class="p-2 g-col-6">
+          <span class="badge text-bg-info" style="font-size: 16px; width: 72px;">ID</span>
+          <br>
+          {{ pokemon.id }}
+        </div>
+        <div class="p-2 g-col-6">
+          <span class="badge text-bg-info" style="font-size: 16px; width: 72px">Altura</span>
+          <br>
+          {{ pokemon.height / 10 }} m
+        </div>
+        <div class="p-2 g-col-6">
+          <span class="badge text-bg-info" style="font-size: 16px; width: 72px">Peso</span>
+          <br>
+          {{ pokemon.weight / 10 }} kg
+        </div>
+      </div>
     </div>
   </div>
 </div>
