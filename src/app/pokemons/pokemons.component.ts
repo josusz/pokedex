@@ -9,7 +9,8 @@ import { Pokemons } from '../pokemons';
 })
 export class PokemonsComponent implements OnInit{
   pokemon: Pokemons = {} as Pokemons;
-  
+  imageUrl: string='';
+
   constructor(private pokemonService: PokemonsService){}
 
   ngOnInit(): void {
@@ -19,6 +20,7 @@ export class PokemonsComponent implements OnInit{
   loadPokemon(id: number): void {
     this.pokemonService.getPokemons(id).subscribe((pokemon) => {
       this.pokemon = pokemon;
+      this.pokemon.imageUrl = this.pokemonService.getPokemonImageUrl(pokemon.id);
     });
   }
 

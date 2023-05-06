@@ -2,21 +2,12 @@
   <div class="display-6">
     Pokedéx
   </div>
+  <hr>
   <div class="row m-3">
     <div class="col">
       <img [src]="pokemon.imageUrl" width="200px" alt="{{ pokemon.name }}">
-    </div>
-  </div>
-  <div class="row m-3">
-    <div class="col">
-      <span>
-        {{ pokemon.id }}
-      </span>
-    </div>
-    <div class="col">
-      <span>
-        {{ pokemon.name }}
-      </span>
+      <br>
+      {{ pokemon.name }} - ID: {{ pokemon.id }}
     </div>
   </div>
   <div class="row m-3">
